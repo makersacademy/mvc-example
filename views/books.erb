@@ -1,0 +1,29 @@
+<h1>Books!</h1>
+
+
+<table>
+  <thead>
+    <td>
+      Name
+    </td>
+    <td>
+      Author
+    </td>
+  </thead>
+<% @books.each  do |book| %>
+  <tr>
+    <td><%= book.name %></td>
+    <td><%= book.author %></td>
+  </tr>
+<% end %>
+</table>
+
+<h3>Add a new book</h3>
+<form action="/add_book" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name="name"></input>
+  <br>
+  <label for="author">Author</label>
+  <input type="text" name="author"></input>
+  <button type="submit">Submit</button
+</form>
