@@ -1,3 +1,7 @@
 require './lib/database_connection'
 
-DatabaseConnection.setup('mvc_example')
+if ENV['RACK_ENV'] == "test"
+  DatabaseConnection.setup('mvc_example_test')
+else
+  DatabaseConnection.setup('mvc_example')
+end
